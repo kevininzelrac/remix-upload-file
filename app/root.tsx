@@ -5,6 +5,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Nav from "./components/nav";
+
+import "./styles/index.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,5 +28,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <>
+      <h1>Remix Upload File</h1>
+      <Nav />
+      <Outlet />
+    </>
+  );
 }
