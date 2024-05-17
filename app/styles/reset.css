@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  list-style-position: inside;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  /* touch-action: manipuation; */ /* buttons are instant, no double tap to zoom ( the device don't wait to check if double tap ) */
+  -webkit-tap-highlight-color: transparent; /* no black "overlay" on tap target */
+  padding: env(safe-area-inset-[side]); /* extend UI into Notch + Home Bar */
+}
+
+/*************************
+  Google Sign Flicker Fix
+*************************/
+.g_id_signin > div > div:first-child {
+  display: none;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  /* IOS and Mozilla on Android */
+  .g_id_signin > div > div:first-child {
+    display: block;
+  }
+}
+
+@media only screen and (hover: hover) and (pointer: coarse) {
+  /* Chromium on Android */
+  .g_id_signin > div > div:first-child {
+    display: block;
+  }
+}
